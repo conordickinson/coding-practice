@@ -1,0 +1,11 @@
+{
+  "files.associations": {
+    "*.t": "lua",
+    "exception": "cpp",
+    "stdexcept": "cpp",
+    "cstdint": "cpp",
+    "algorithm": "cpp",
+    "atomic": "cpp",
+    "utility": "cpp"
+  }
+}
