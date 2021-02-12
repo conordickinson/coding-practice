@@ -20,7 +20,7 @@ typedef struct Heap {
   U32 maxSize;
   HeapType type;
   HEAP_VALUE_TYPE values[1];
-};
+} Heap;
 
 Heap *heapAlloc(HeapType type, U32 maxSize) {
   if (maxSize < 1) {

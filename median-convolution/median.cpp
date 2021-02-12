@@ -30,6 +30,14 @@ void medianInsert(Heap *leftHeap, Heap *rightHeap, F32 value) {
   }
 }
 
+int min(int v1, int v2) {
+  return v1 < v2 ? v1 : v2;
+}
+
+int max(int v1, int v2) {
+  return v1 > v2 ? v1 : v2;
+}
+
 // median convolution of f32 heightfield
 F32 *heightfieldMedian(F32 *heightfield, U32 hWidth, U32 hHeight, U32 convR) {
   F32 *medians = (F32 *)malloc(hWidth * hHeight * sizeof(F32));
@@ -43,10 +51,10 @@ F32 *heightfieldMedian(F32 *heightfield, U32 hWidth, U32 hHeight, U32 convR) {
       heapEmpty(leftHeap);
       heapEmpty(rightHeap);
       
-      int fx1 = fmax(0, x - convR);
-      int fx2 = fmin(hWidth - 1, x + convR);
-      int fy1 = fmax(0, y - convR);
-      int fy2 = fmin(hHeight - 1, y + convR);
+      int fx1 = max(0, x - convR);
+      int fx2 = min(hWidth - 1, x + convR);
+      int fy1 = max(0, y - convR);
+      int fy2 = min(hHeight - 1, y + convR);
       for (int sx = fx1; sx <= fx2; ++sx) {
         for (int sy = fy1; sy <= fy2; ++sy) {
           medianInsert(leftHeap, rightHeap, heightfield[sy * hWidth + sx]);

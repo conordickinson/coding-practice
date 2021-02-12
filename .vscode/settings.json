@@ -6,6 +6,8 @@
     "cstdint": "cpp",
     "algorithm": "cpp",
     "atomic": "cpp",
-    "utility": "cpp"
+    "utility": "cpp",
+    "limits": "cpp",
+    "chrono": "cpp"
   }
 }
